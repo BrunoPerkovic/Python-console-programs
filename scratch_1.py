@@ -68,7 +68,7 @@ def full_board(play_count):                                             #funkcij
         return False
 
 
-def main_game():                                                        #funkcija koja sadrži glavni blok koda u kojem se izvršva sve prethodno navedeno
+def main_game():                                                        #funkcija koja sadrži glavni blok koda u kojem se izvršva igra
     (first_player, second_player) = player_sign()
     print(first_player + " is going first")
     print(second_player + " is going second")
@@ -79,7 +79,7 @@ def main_game():                                                        #funkcij
     turn = first_player
 
     while game_on:
-        symbol = first_player
+        symbol = first_player                                             
         first_choices = first_player_choices[first_player]
         second_choices = second_player_choices[second_player]
         first_player_choices[first_player] = player_choice(symbol, first_choices, second_choices)
