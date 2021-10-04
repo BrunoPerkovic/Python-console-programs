@@ -9,17 +9,17 @@ game_on = True
 def display_board(board):
     print(board[7] + ' I ' + board[8] + ' I ' + board[9])
     print(board[4] + ' I ' + board[5] + ' I ' + board[6])
-    print(board[1] + ' I ' + board[2] + ' I ' + board[3])
+    print(board[1] + ' I ' + board[2] + ' I ' + board[3])            #funkcija koja prikazuje ploču
 
 
-def coin_toss():
+def coin_toss():                                                     #funkcija koja simulira bacanje novcica, pismo ili glava
     if random.randint(0, 1) == 0:
         return 'Player 2'
     else:
         return 'Player 1'
 
 
-def player_sign():
+def player_sign():                                                   #funkcija koja na temelju funkcije coin_toss traži od korisnika da odabere svoj simbol za igru
     player = coin_toss()
     print("First pick: " + player)
     first_player_sign = input("Please choose X or O: ").upper()
@@ -33,7 +33,7 @@ def player_sign():
         return choices
 
 
-def player_choice(player_symbol, current_player_picks, other_player_picks):
+def player_choice(player_symbol, current_player_picks, other_player_picks):  #funkcija koja traži od korisnika da unese broj polja na koji želi staviti svoj simbol, provjerava ispravnost unosa i stavlja simbol na ploču
     player_input = 0
     while player_input not in range(1, 10):
         try:
@@ -51,7 +51,7 @@ def player_choice(player_symbol, current_player_picks, other_player_picks):
         return current_player_picks
 
 
-def win_check(choices):
+def win_check(choices):                                                   #funkcija koja provjerava pobjednika
     for ele in winning_combination:
         winning_intersect = set(choices) & set(ele)
         if len(winning_intersect) == 3:
@@ -60,7 +60,7 @@ def win_check(choices):
     return False
 
 
-def full_board(play_count):
+def full_board(play_count):                                             #funkcija koja provjerava punu ploču bez pobjednika
     if play_count == play_limit:
         print("DRAW! ")
         return True
@@ -68,7 +68,7 @@ def full_board(play_count):
         return False
 
 
-def main_game():
+def main_game():                                                        #funkcija koja sadrži glavni blok koda u kojem se izvršva sve prethodno navedeno
     (first_player, second_player) = player_sign()
     print(first_player + " is going first")
     print(second_player + " is going second")
@@ -102,7 +102,7 @@ def main_game():
                 continue
 
 
-def play_tictactoe():
+def play_tictactoe():                                                  #funkcija koja pita korisnika želi li igrati i igrati opet
     play_again = input("Do you want to play? Yes or No: ").lower().startswith("y")
     while play_again:
         main_game()
