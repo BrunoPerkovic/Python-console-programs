@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @BrunoPerkovic
-- 👀 I’m interested in ... Python
-- 🌱 I’m currently learning ... Python
+- 👀 I’m interested in ... Python, JS, React, Node.JS
+- 🌱 I’m currently learning ... Python, JS, React, Node.JS
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
